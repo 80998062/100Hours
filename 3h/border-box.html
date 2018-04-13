@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Border-box</title>
+    <style type="text/css">
+        *, *:before, *:after {
+            /* Chrome 9-, Safari 5-, iOS 4.2-, Android 3-, Blackberry 7- */
+            -webkit-box-sizing: border-box;
+
+            /* Firefox (desktop or Android) 28- */
+            -moz-box-sizing: border-box;
+
+            /* Firefox 29+, IE 8+, Chrome 10+, Safari 5.1+, Opera 9.5+, iOS 5+, Opera Mini Anything, Blackberry 10+, Android 4+ */
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+<h1>Four of me can sit in a row no matter what border and padding we have</h1>
+<section style="width: 400px;height: 100px;display: flex; flex-flow: row nowrap">
+    <div style="background: mediumseagreen;border: 6px solid green; width: 25%"></div>
+    <div style="background: skyblue;border: 10px dashed blue; width: 25%"></div>
+    <div style="background: coral;border: 20px dotted red; width: 25%;padding: 10px"></div>
+    <div style="background: mediumpurple;border: 1px ridge purple; width: 25%;padding: 5px"></div>
+</section>
+</body>
+</html>
