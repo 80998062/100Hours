@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Multiple Select</title>
+</head>
+<body>
+<!--<label for="myFruit">What's your favorite fruit?</label>-->
+<!--<input name="myFruit" id="myFruit" list="mySuggestion">-->
+<!--<datalist id="mySuggestion">-->
+<!--<option>Apple</option>-->
+<!--<option>Banana</option>-->
+<!--<option>Blackberry</option>-->
+<!--<option>Blueberry</option>-->
+<!--<option>Lemon</option>-->
+<!--<option>Lychee</option>-->
+<!--<option>Peach</option>-->
+<!--<option>Pear</option>-->
+<!--</datalist>-->
+
+<p>支持datalist元素的浏览器将忽略所有不是option元素的元素，并按照预期工作。
+    另一方面，不支持datalist元素的浏览器将显示标签和选择框。</p>
+<br />
+<label for="myFruit">What is your favorite fruit? (With fallback)</label>
+<input type="text" id="myFruit" name="fruit" list="fruitList">
+
+<datalist id="fruitList">
+    <label for="suggestion">or pick a fruit</label>
+    <select id="suggestion" name="altFruit">
+        <option>Apple</option>
+        <option>Banana</option>
+        <option>Blackberry</option>
+        <option>Blueberry</option>
+        <option>Lemon</option>
+        <option>Lychee</option>
+        <option>Peach</option>
+        <option>Pear</option>
+    </select>
+</datalist>
+</body>
+</html>
