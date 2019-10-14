@@ -1,0 +1,45 @@
+body {
+    font-family: 'Shadows Into Light Two', Helvetica, Sans-serif, serif;
+    color: #333;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 800;
+}
+
+section {
+    display: block;
+    border: solid black 0.2rem;
+    border-radius: 1rem;
+    background: white;
+    margin: 1rem;
+    padding: 1rem;
+}
+
+article {
+    display: block;
+    border-radius: 1rem;
+    background: lightgrey;
+    padding: 1rem;
+}
+
+span {
+    display: block;
+    background: skyblue;
+    height: 4rem;
+    width: 4rem;
+    margin: 1rem;
+    border: solid dodgerblue 0.4rem;
+}
+
+p::first-letter {
+    font-size: 2rem;
+    float: left;
+    margin-right: 0.5rem;
+    font-weight: bold;
+}
+
+div.clearfix {
+    clear: both;
+}

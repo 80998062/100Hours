@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Position</title>
+    <style type="text/css">
+        body {
+            font-family: "Gill Sans Extrabold", Helvetica, sans-serif;
+        }
+
+        section {
+            display: block;
+            border: solid darkgray 1px;
+            background: lightgrey;
+            margin: 10px;
+            padding: 16px;
+        }
+
+        span {
+            display: block;
+            background: cornflowerblue;
+            height: 40px;
+            width: 40px;
+            margin: 4px;
+            color: white;
+            border: solid white 1px;
+        }
+
+        div, dl, dt, dd {
+            box-sizing: border-box;
+        }
+
+        dl {
+            margin: 0;
+            padding: 24px 0 0 0;
+        }
+
+        dt {
+            background: #B8C1C8;
+            border-bottom: 1px solid #989EA4;
+            border-top: 1px solid #717D85;
+            color: #FFF;
+            font: bold 18px/21px Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 2px 0 0 12px;
+            position: -webkit-sticky;
+            position: sticky;
+            top: -1px;
+        }
+
+        dd {
+            font: bold 20px/45px Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0 0 0 12px;
+            white-space: nowrap;
+        }
+
+        dd + dd {
+            border-top: 1px solid #CCC
+        }
+    </style>
+</head>
+<body>
+
+<section>
+    <h1>static</h1>
+    <p>该关键字指定元素使用正常的布局行为，即元素在文档常规流中当前的布局位置。此时 top, right, bottom, left 和 z-index 属性无效</p><br/>
+    <span style="z-index: 2"></span>
+    <span style="top: 10px; left: 10px"></span>
+    <span style="bottom: 4px"></span>
+</section>
+
+
+<section>
+    <h1>relative</h1>
+    <p>该关键字下，元素先放置在未添加定位时的位置，再在不改变页面布局的前提下调整元素位置（因此会在此元素未添加定位时所在位置留下空白）。</p><br/>
+    <span style="background: lightcoral"></span>
+    <div style="width: 40px;height: 40px;border: dashed black 1px;margin: 4px;">
+        <span style="position: relative; left: 10px;top: 10px;background: lightcoral"></span>
+    </div>
+    <span style="background: lightcoral"></span>
+</section>
+
+<section>
+    <h1>absolute: static parent</h1>
+    <p>不为元素预留空间</p><br/>
+    <span style="background: orangered"></span>
+    <span style="position: absolute; background: orangered;margin: 0;left: 0;top: 0"></span>
+    <span style="background: orangered"></span>
+</section>
+
+
+<section style="position: relative">
+    <h1>absolute: not-static parent</h1>
+    <p>通过指定元素相对于最近的非 static 定位祖先元素的偏移，来确定元素位置。</p><br/>
+    <span style="background: mediumorchid"></span>
+    <span style="position: absolute; background: mediumorchid;margin: 0;left: 0;top: 0"></span>
+    <span style="background: mediumorchid"></span>
+</section>
+
+
+<section>
+    <h1>fixed</h1>
+    <p>不为元素预留空间，而是通过指定元素相对于屏幕视口（viewport）的位置来指定元素位置。</p><br/>
+    <span style="background: hotpink"></span>
+    <span style="position: fixed; background: hotpink;margin: 0; left: 50px;top: 50px"></span>
+    <span style="background: hotpink"></span>
+</section>
+
+
+<section style="transform: rotate(-1deg);">
+    <h1>fixed</h1>
+    <p>fixed 属性会创建新的层叠上下文。当元素祖先的 transform 属性非 none 时，容器由视口改为该祖先。</p><br/>
+    <span style="background: burlywood"></span>
+    <span style="position: fixed; background: burlywood;margin: 0; left: 50px;top: 50px"></span>
+    <span style="background: burlywood"></span>
+</section>
+
+<section>
+    <h1>sticky</h1>
+    <p>粘性定位是相对定位和固定定位的混合。元素在跨越特定阈值前为相对定位，之后为固定定位。</p><br/>
+    <p>粘性定位常用于定位字母列表的头部元素。标示 B 部分开始的头部元素在滚动 A 部分时，始终处于 A 的下方。
+        而在开始滚动 B 部分时，B 的头部会固定在屏幕顶部，直到所有 B 的项均完成滚动后，才被 C 的头部替代。</p><br/>
+    <div style="height: 200px;overflow: scroll">
+        <dl>
+            <dt>A</dt>
+            <dd>Andrew W.K.</dd>
+            <dd>Apparat</dd>
+            <dd>Arcade Fire</dd>
+            <dd>At The Drive-In</dd>
+            <dd>Aziz Ansari</dd>
+        </dl>
+        <dl>
+            <dt>C</dt>
+            <dd>Chromeo</dd>
+            <dd>Common</dd>
+            <dd>Converge</dd>
+            <dd>Crystal Castles</dd>
+            <dd>Cursive</dd>
+        </dl>
+        <dl>
+            <dt>E</dt>
+            <dd>Explosions In The Sky</dd>
+        </dl>
+        <dl>
+            <dt>T</dt>
+            <dd>Ted Leo & The Pharmacists</dd>
+            <dd>T-Pain</dd>
+            <dd>Thrice</dd>
+            <dd>TV On The Radio</dd>
+            <dd>Two Gallants</dd>
+        </dl>
+    </div>
+</section>
+</body>
+</html>

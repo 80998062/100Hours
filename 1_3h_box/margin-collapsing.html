@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Margin Collapsing</title>
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Shadows+Into+Light+Two"/>
+    <style type="text/css">
+        body {
+            font-family: 'Shadows Into Light Two', Helvetica, Sans-serif, serif;
+            color: #333;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 800;
+        }
+
+        section {
+            display: block;
+            border: solid black 0.2rem;
+            border-radius: 1rem;
+            background: white;
+            margin: 1rem;
+            padding: 1rem;
+        }
+
+        article {
+            display: block;
+            border-radius: 1rem;
+            background: lightgrey;
+            padding: 1rem;
+        }
+
+        span {
+            display: block;
+            background: skyblue;
+            height: 4rem;
+            width: 4rem;
+            margin: 1rem;
+            border: solid dodgerblue 0.4rem;
+        }
+    </style>
+</head>
+<body>
+<section>
+    <h1>Adjacent siblings</h1>
+    <h2>The margins of adjacent siblings are collapsed</h2>
+    <article>
+        <span></span>
+        <span></span>
+    </article>
+    <h2>Except when the latter sibling needs to be cleared past floats</h2>
+    <article>
+        <span></span>
+        <span></span>
+    </article>
+</section>
+</body>
+</html>
